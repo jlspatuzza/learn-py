@@ -17,7 +17,7 @@ class ApplicationPolicy
   end
 
   def create?
-    user.status == "admin"
+    user.email == "jlspatuzza@hotmail.fr"
   end
 
   def new?
