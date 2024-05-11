@@ -29,6 +29,8 @@ gem "jbuilder"
 
 gem "devise"
 
+gem "postmark-rails"
+
 gem "letter_opener", group: :development
 
 # Use Redis adapter to run Action Cable in production
