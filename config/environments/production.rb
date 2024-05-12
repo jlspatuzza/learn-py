@@ -64,11 +64,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-
-  config.action_mailer.delivery_method = :postmark
-  config.action_mailer.postmark_settings = { api_token: ENV['df138595-f97e-4a8d-948a-619daa7a00be'] }
-  config.action_mailer.default_url_options = { host: "https://www.learnpython.fr" }
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "www.learnpython.fr" }
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
