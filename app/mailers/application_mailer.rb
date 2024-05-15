@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "jeanlouis.spatuzza@gmail.com"
+  default from: "contact@learnpython.fr"
   layout "mailer"
 end
