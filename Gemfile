@@ -33,6 +33,8 @@ gem "postmark-rails"
 
 gem "letter_opener", group: :development
 
+gem "gibbon"
+
 
 
 # Use Redis adapter to run Action Cable in production
