@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :courses
   after_create :send_welcome_email
-  after_create :subscribe_to_newsletter
+  # after_create :subscribe_to_newsletter
   before_validation :set_defaults
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
