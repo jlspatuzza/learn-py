@@ -20,7 +20,7 @@ class User < ApplicationRecord
   end
 
   def subscribe_to_newsletter
-    SubscribeToNewsletterService.new(self).call
+    SubscribeToNewsletterService.new(self).subscribe
   end
 
 end
