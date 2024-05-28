@@ -15,8 +15,8 @@ Devise.setup do |config|
   # ==> Omniauth
   config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {
     scope: 'email,profile',
-    prompt: 'select_account'
-  }
+    prompt: 'select_account',
+ }
 
 
   # The secret key used by Devise. Devise uses this key to generate
