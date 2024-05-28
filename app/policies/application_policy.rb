@@ -13,11 +13,11 @@ class ApplicationPolicy
   end
 
   def show?
-    false
+    true
   end
 
   def create?
-    user.email == "jlspatuzza@hotmail.fr"
+    user.admin?
   end
 
   def new?
@@ -33,7 +33,11 @@ class ApplicationPolicy
   end
 
   def destroy?
-    false
+    user.admin?
+  end
+
+  def scope
+    Pundit.policy_scope!(user, record.class)
   end
 
   class Scope
@@ -43,7 +47,7 @@ class ApplicationPolicy
     end
 
     def resolve
-      raise NotImplementedError, "You must define #resolve in #{self.class}"
+      scope.all
     end
 
     private

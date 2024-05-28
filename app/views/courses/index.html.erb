@@ -2,8 +2,7 @@
 
 <div class="container"><% @courses.each do |course| %><h6><%= course.name %></h6><% end %></div>
 
-<%# <% if policy(Course).create? %>
+<% if policy(Course).create?  %>
 
 <%= link_to 'create a new course', courses_new_path %>
-
-<%# <% end %> 
+<% end %>

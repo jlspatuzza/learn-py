@@ -35,6 +35,14 @@ gem "letter_opener", group: :development
 
 gem "gibbon"
 
+gem 'omniauth'
+
+gem 'omniauth-google-oauth2'
+
+# Gemfile
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
+
+
 
 
 # Use Redis adapter to run Action Cable in production

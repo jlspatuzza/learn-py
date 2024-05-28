@@ -4,6 +4,10 @@ class CoursePolicy < ApplicationPolicy
       scope.all
     end
 
+    def index?
+      user.present?
+    end
+
     def new?
       create?
     end

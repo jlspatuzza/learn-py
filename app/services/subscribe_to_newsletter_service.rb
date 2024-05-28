@@ -20,7 +20,7 @@ class SubscribeToNewsletterService
       if e.title == "Member Exists"
         Rails.logger.info("Mailchimp: Member already exists, updating subscriber.")
         update_subscriber(member_id)
-      elsif e.status == 404
+      elsif e.status_code == 404
         # If not found, create a new subscriber
         create_subscriber
       else

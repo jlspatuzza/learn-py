@@ -1,7 +1,17 @@
 class CoursesController < ApplicationController
+
+  before_action :authenticate_user!
+  after_action :verify_authorized, except: :index
+
   def index
-    @courses = Course.all
+    @courses = policy_scope(Course)
   end
+
+  def show
+    @course = Course.find(params[:id])
+    authorize @course
+  end
+
 
   def new
     @course = Course.new
@@ -23,6 +33,30 @@ class CoursesController < ApplicationController
     end
 
   end
+
+  def edit
+    @course = Course.find(params[:id])
+    authorize @course
+  end
+
+  def update
+    @course = Course.find(params[:id])
+    authorize @course
+
+    if @course.update(course_params)
+      redirect_to @course, notice: 'Course was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @course = Course.find(params[:id])
+    authorize @course
+    @course.destroy
+    redirect_to courses_path, notice: 'Course was successfully destroyed.'
+  end
+
 
   private
 
